@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>App météo</title>
+</head>
+<body>
+    <h1>Météo</h1>
+    <a href="/auth">Login with Github</a>
+    <form action="/search-city" method="post">
+        <label for="city">Ville dont vous voulez la météo :</label>
+        <input type="text" name="city" id="city" required>
+        <button type="submit">Chercher</button>
+    </form>
+    <ul>
+        <% data.forEach(data => { %>
+            <li><%= data.city_name %></li>
+            <li><%= data.temp %>°C</li>
+            <li><%= data.weather %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>
